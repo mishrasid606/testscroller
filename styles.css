@@ -1,0 +1,138 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f4f4f9;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  width: 70%;
+  max-width: 450px;
+}
+
+.boxs {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+h3 {
+  color: #0056b3; /* Blue color for heading */
+  font-size: 1.6rem; /* Slightly larger font for emphasis */
+  text-align: left; /* Align the heading to the left */
+  margin-bottom: 10px;
+  margin-left: 20px; /* Adjust left margin for more space */
+}
+
+.scroller-boxs-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.scroller-boxs {
+  width: 90%;
+  max-height: 200px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background-color: #fafafa;
+  padding: 8px;
+  border-radius: 8px;
+  margin: 0 auto;
+  position: relative;
+  scrollbar-width: thin; /* For Firefox */
+  scrollbar-color: #0056b3 #e0e0e0; /* Scrollbar color */
+}
+
+/* Custom scroll bar styling for Chrome, Safari, and Edge */
+.scroller-boxs::-webkit-scrollbar {
+  width: 12px;
+}
+
+.scroller-boxs::-webkit-scrollbar-thumb {
+  background-color: #0056b3;
+  border-radius: 10px;
+}
+
+.scroller-boxs::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+  border-radius: 10px;
+}
+
+/* Scroll up and down buttons */
+.arrow-button {
+  font-size: 20px;
+  color: #0056b3;
+  cursor: pointer;
+  user-select: none;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.arrow-button:hover {
+  color: #007bff;
+}
+
+.scroll-contents {
+  display: flex;
+  flex-direction: column;
+  animation: scroll-up 80s linear infinite;
+}
+
+.scroll-items {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 8px;
+  text-align: justify;
+}
+
+.scroll-items img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.scroll-items strong {
+  font-size: 1rem;
+  color: #333;
+}
+
+.scroll-items p,
+.scroll-items ol {
+  font-size: 0.85rem;
+  color: #555;
+  line-height: 1.4;
+  margin-left: 60px;
+}
+
+hr {
+  width: 85%;
+  margin: 10px auto;
+  border: 0;
+  border-top: 1px solid #0056b3;
+}
+
+.scroller-boxs:hover .scroll-contents {
+  animation-play-state: paused;
+}
+
+/* Scroll Animation */
+@keyframes scroll-up {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-100%); }
+}
